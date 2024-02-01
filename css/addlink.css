@@ -1,0 +1,32 @@
+.fav-menubar-container {
+  width: 18%;
+  margin: 0 auto;
+}
+
+.fav-menubar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+  transition: background-color 0.5s ease;
+}
+
+.fav-menubar .sidebar-link {
+  margin: 5px;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  width: 150px;
+}
+
+.fav-menubar .sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

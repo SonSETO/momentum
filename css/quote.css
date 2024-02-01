@@ -1,0 +1,30 @@
+#quoteAuthor {
+  margin-top: 20px;
+}
+#quote {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  margin-top: 50px;
+  opacity: 20%;
+}
+
+.main_quote {
+  position: absolute;
+  bottom: 0%;
+}
+
+#quote:hover {
+  border-radius: 15px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  opacity: 100%;
+  font-weight: bold;
+}

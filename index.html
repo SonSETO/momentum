@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Momentum App</title>
+  </head>
+  <body>
+    <div class="main_container">
+      <div id="weatherIcon">
+        <i class="fa-solid fa-sun"></i>
+      </div>
+      <div class="main_weather">
+        <div id="weather">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="main_clock">
+        <h2 id="clock">00:00:00</h2>
+        <h1 id="greeting" class="hidden"></h1>
+      </div>
+      <div class="main_form">
+        <form class="hidden" id="login-form">
+          <input
+            required
+            maxlength="15"
+            type="text"
+            placeholder="What is your name?"
+          />
+          <input class="btn" type="submit" value="Log In" />
+        </form>
+      </div>
+      <div>
+        <form id="searchForm">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="안되는 이유 찾아보기 일단 보류"
+          />
+        </form>
+      </div>
+      <div class="sidebar">
+        <div class="main_todo">
+          <form id="todo-form">
+            <input
+              minlength="5"
+              maxlength="11"
+              type="text"
+              required
+              placeholder="Hello ToDo List"
+            />
+          </form>
+        </div>
+        <div class="'todos">
+          <ul id="todo-list"></ul>
+        </div>
+      </div>
+      <div class="main_quote">
+        <div id="quote">
+          <span id="quoteText"></span>
+          <span id="quoteAuthor"></span>
+        </div>
+      </div>
+      <div class="fav-menubar-container">
+        <div class="fav-menubar">
+          <a href="#" id="addLink" class="sidebar-link">바로가기 추가 +</a>
+          <a href="https://nomadcoders.co/" class="sidebar-link">노마드코더</a>
+          <a href="https://www.youtube.com" class="sidebar-link">YouTube</a>
+          <a href="https://www.naver.com" class="sidebar-link">Naver</a>
+        </div>
+      </div>
+    </div>
+    <script src="./js/greetings.js"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/quotes.js"></script>
+    <script src="./js/background.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/addlink.js"></script>
+    <script src="./js/search.js"></script>
+    <script
+      src="https://kit.fontawesome.com/fd8936dbd6.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

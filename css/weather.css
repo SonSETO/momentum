@@ -1,0 +1,46 @@
+#weather {
+  display: none;
+  flex-direction: column;
+  border-radius: 15px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#weatherIcon {
+  font-size: 50px;
+  position: absolute;
+  top: 4%;
+  left: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+}
+#weatherIcon:hover {
+  transition: transform 0.5s ease-in-out;
+  animation: turrrrrn 3s infinite;
+}
+
+@keyframes turrrrrn {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.main_weather {
+  position: absolute;
+  top: 10%;
+  left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
