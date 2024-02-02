@@ -31,6 +31,7 @@ function addLink() {
   madelinks.push(newmadeLink);
 
   let newLink = document.createElement("a");
+  newLink.id = newmadeLink.id;
   newLink.href = newmadeLink.url || "#";
   newLink.className = "sidebar-link";
   newLink.innerText = newmadeLink.text || `Link`;
@@ -86,6 +87,7 @@ function refreshSidebar() {
 
   madelinks.forEach((link) => {
     let newLink = document.createElement("a");
+
     newLink.href = link.url || "#";
     newLink.className = "sidebar-link";
     newLink.innerText = link.text || `Link`;
