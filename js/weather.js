@@ -17,8 +17,8 @@ function onGeoOk(position) {
       });
       city.innerText = `현재 위치 ${data.name}`;
       temp.innerText = `현재 날씨 ${data.weather[0].main}`;
-      weather.innerText = `현재온도 ${data.main.temp}`;
       fells.innerText = `체감 온도 ${data.main.feels_like}`;
+      weather.innerText = `현재 온도 ${data.main.temp}`;
     })
   );
 }

@@ -1,9 +1,9 @@
 .sidebar {
   position: fixed;
-  top: 30%;
-  left: 0;
-  height: 43%;
-  width: 180px;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  width: 200px;
   transition: background-color 0.5s ease, border-right 0.5s ease;
 }
 

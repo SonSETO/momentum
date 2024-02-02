@@ -28,7 +28,7 @@ function paintToDo(newTodo) {
 
   libutton.addEventListener("click", deleteToDo);
   lispan.style.marginRight = "15px";
-  lilist.style.marginBottom = "10px";
+  lilist.style.marginTop = "20px";
   lilist.style.textAlign = "center";
 
   lilist.appendChild(lispan);
@@ -36,7 +36,7 @@ function paintToDo(newTodo) {
   toDoList.appendChild(lilist);
 }
 
-const MAX_TODO_ITEMS = 6;
+const MAX_TODO_ITEMS = 20;
 
 function handleToDoSubmit(event) {
   event.preventDefault();
