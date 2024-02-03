@@ -96,3 +96,8 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+button i:hover {
+  opacity: 100%;
+  color: red;
+}

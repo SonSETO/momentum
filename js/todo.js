@@ -3,11 +3,17 @@ const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 const sidebar = document.querySelector(".sidebar");
 const TODOS_KEY = "todos";
+const SIDEBAR_KEY = "sidebarActive";
 
 let toDos = [];
+let isSidebarActive = localStorage.getItem(SIDEBAR_KEY) === "true";
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
+
+function saveSidebarState() {
+  localStorage.setItem(SIDEBAR_KEY, isSidebarActive);
 }
 
 function deleteToDo(event) {
@@ -16,6 +22,7 @@ function deleteToDo(event) {
 
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(lilist.id));
   saveToDos();
+  hideSidebarStyle();
 }
 
 function paintToDo(newTodo) {
@@ -26,14 +33,24 @@ function paintToDo(newTodo) {
   const libutton = document.createElement("button");
   libutton.innerHTML = '<i class="fa-fw fa-solid fa-trash-can"></i>';
 
-  libutton.addEventListener("click", deleteToDo);
   lispan.style.marginRight = "15px";
   lilist.style.marginTop = "20px";
   lilist.style.textAlign = "center";
+  lilist.style.fontSize = "15px";
+
+  lilist.style.color = "rgba(255, 255, 255, 0.8)";
+  lilist.style.textDecoration = "none";
+  lilist.style.background =
+    "linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3))";
+  lilist.style.boxShadow = "0 0 10px rgba(255, 255, 255, 0.5)";
+  lilist.style.borderRadius = "5px";
+
+  libutton.addEventListener("click", deleteToDo);
 
   lilist.appendChild(lispan);
   lilist.appendChild(libutton);
   toDoList.appendChild(lilist);
+  showSidebarStyle();
 }
 
 const MAX_TODO_ITEMS = 20;
@@ -51,6 +68,7 @@ function handleToDoSubmit(event) {
     toDos.push(newTodoObj);
     paintToDo(newTodoObj);
     saveToDos();
+    showSidebarStyle();
   } else {
     alert(`최대 ${MAX_TODO_ITEMS}개까지만 리스트를 추가할 수 있습니다.`);
   }
@@ -67,16 +85,27 @@ if (savedToDos !== null) {
 }
 
 function showSidebarStyle() {
-  const sidebar = document.querySelector(".sidebar");
+  isSidebarActive = true;
   sidebar.classList.add("active");
+  saveSidebarState();
 }
+
 toDoForm.addEventListener("submit", showSidebarStyle);
 
 function hideSidebarStyle() {
   const lilistItems = document.querySelectorAll("#todo-list li");
 
   if (lilistItems.length === 0) {
+    isSidebarActive = false;
     sidebar.classList.remove("active");
+    saveSidebarState();
   }
 }
+
 sidebar.addEventListener("click", hideSidebarStyle);
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (isSidebarActive) {
+    sidebar.classList.add("active");
+  }
+});

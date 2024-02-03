@@ -34,6 +34,27 @@ input {
   cursor: pointer;
 }
 
+#searchInput {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  width: 300px;
+  transition: all 0.3s ease;
+}
+
+#searchInput:focus,
+#searchInput:hover {
+  color: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 @-webkit-keyframes focus-in-contract-bck {
   0% {
     letter-spacing: 1em;

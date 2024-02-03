@@ -4,6 +4,7 @@
 @import "./sidebar.css";
 @import "./reset.css";
 @import "./addlink.css";
+@import "./iframe.css";
 
 .hidden {
   display: none;

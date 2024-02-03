@@ -12,6 +12,7 @@ function deleteLink(event) {
   const linkId = parseInt(aLink.id);
   aLink.remove();
   madelinks = madelinks.filter((link) => link.id !== linkId);
+  console.log("Deleting link with id:", linkId);
   saveLink();
 }
 
@@ -37,7 +38,16 @@ function addLink() {
   newLink.innerText = newmadeLink.text || `Link`;
 
   const abutton = document.createElement("button");
-  abutton.innerText = "❌";
+  abutton.innerHTML = '<i class="fa-fw fa-solid fa-trash-can"></i>';
+  abutton.style.fontSize = "15px";
+  abutton.style.float = "right";
+  abutton.style.color = "rgba(255, 255, 255, 0.8)";
+  abutton.style.textDecoration = "none";
+  abutton.style.background =
+    "linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3))";
+  abutton.style.boxShadow = "0 0 10px rgba(255, 255, 255, 0.5)";
+  abutton.style.borderRadius = "5px";
+
   abutton.addEventListener("click", deleteLink);
 
   newLink.appendChild(abutton);
@@ -47,7 +57,6 @@ function addLink() {
   });
 
   document.querySelector(".fav-menubar").appendChild(newLink);
-
   saveLink();
   closeModal();
 }
@@ -61,13 +70,20 @@ madelinks.forEach((link) => {
   newLink.href = link.url || "#";
   newLink.className = "sidebar-link";
   newLink.innerText = link.text || `Link`;
+  newLink.id = link.id;
 
   const abutton = document.createElement("button");
-  abutton.innerText = "❌";
+  abutton.innerHTML = '<i class="fa-fw fa-solid fa-trash-can"></i>';
+  abutton.style.fontSize = "15px";
+  abutton.style.float = "right";
+  abutton.style.color = "rgba(255, 255, 255, 0.8)";
+  abutton.style.textDecoration = "none";
+  abutton.style.background =
+    "linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3))";
+  abutton.style.boxShadow = "0 0 10px rgba(255, 255, 255, 0.5)";
+  abutton.style.borderRadius = "5px";
   abutton.addEventListener("click", deleteLink);
-
   newLink.appendChild(abutton);
-
   document.querySelector(".fav-menubar").appendChild(newLink);
 });
 
@@ -87,13 +103,22 @@ function refreshSidebar() {
 
   madelinks.forEach((link) => {
     let newLink = document.createElement("a");
-
     newLink.href = link.url || "#";
     newLink.className = "sidebar-link";
     newLink.innerText = link.text || `Link`;
+    newLink.id = link.id;
 
     const abutton = document.createElement("button");
-    abutton.innerText = "❌";
+    abutton.innerHTML = '<i class="fa-fw fa-solid fa-trash-can"></i>';
+    abutton.style.fontSize = "15px";
+    abutton.style.float = "right";
+    abutton.style.color = "rgba(255, 255, 255, 0.8)";
+    abutton.style.textDecoration = "none";
+    abutton.style.background =
+      "linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3))";
+    abutton.style.boxShadow = "0 0 10px rgba(255, 255, 255, 0.5)";
+    abutton.style.borderRadius = "5px";
+
     abutton.addEventListener("click", deleteLink);
 
     newLink.appendChild(abutton);

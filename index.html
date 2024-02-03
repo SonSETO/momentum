@@ -20,9 +20,24 @@
           <span></span>
         </div>
       </div>
+
+      <iframe
+        width="300"
+        height="169"
+        src="https://www.youtube.com/embed/9bVSIv2p7zw?si=aQaPj3AneW4UnlLW"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        class="styled-iframe"
+      ></iframe>
+
       <div class="main_clock">
         <h2 id="clock">00:00:00</h2>
         <h1 id="greeting" class="hidden"></h1>
+      </div>
+      <div class="main_date">
+        <h2 id="date">0000년00월00일0요일</h2>
       </div>
       <div class="main_form">
         <form class="hidden" id="login-form">
@@ -40,7 +55,7 @@
           <input
             id="searchInput"
             type="text"
-            placeholder="안되는 이유 찾아보기 일단 보류"
+            placeholder="검색어를 입력하세요."
           />
         </form>
       </div>
@@ -93,6 +108,8 @@
     <script src="./js/weather.js"></script>
     <script src="./js/addlink.js"></script>
     <script src="./js/search.js"></script>
+    <script src="./js/date.js"></script>
+
     <script
       src="https://kit.fontawesome.com/fd8936dbd6.js"
       crossorigin="anonymous"
